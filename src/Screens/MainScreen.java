@@ -1,5 +1,6 @@
 package Screens;
 
+import Command.CommandRegister;
 import Console.Console;
 import Input.ReadKeyboard;
 import Util.Util;
@@ -27,6 +28,8 @@ public class MainScreen extends Screen{
 
     @Override
     public void onCommand(String cmd){
+        commandHistory = (String[]) Util.append(commandHistory, CommandRegister.executeCommand(cmd));
         commandHistory = (String[]) Util.append(commandHistory,Console.user+"> "+cmd);
+        commandHistory = (String[]) Util.append(commandHistory,"");                               //just a newline
     }
 }
