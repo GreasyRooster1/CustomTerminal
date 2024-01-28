@@ -1,6 +1,7 @@
 package Console;
 
 import Screens.MainScreen;
+import Screens.Screen;
 
 import java.awt.*;
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class Console {
     public static int heightChars, widthChars;
     public static char[][] display = {};
     public static String user = "ADMIN";
+    public static Screen currentScreen = new MainScreen();
     public static void startup(){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         widthScreen = screenSize.getWidth();
@@ -28,18 +30,16 @@ public class Console {
         }
     }
     public static void update(){
-        updateDisplay();
+        currentScreen.update();
         refreshScreen();
     }
     public static void run(String cmd){
+        currentScreen.onCommand(cmd);
         if(cmd.equals("quit")){
             clearConsole();
             System.out.print("Thank you for choosing to use Magma Console V1");
             System.exit(0);
         }
-    }
-    public static void updateDisplay(){
-        MainScreen.update();
     }
     public static void refreshScreen(){
         clearConsole();
