@@ -14,6 +14,11 @@ public class Util {
         }
         return b;
     }
+    public static String removeLastChar(String s) {
+        return (s == null || s.length() == 0)
+                ? null
+                : (s.substring(0, s.length() - 1));
+    }
     public static Object expand(Object array) {
         int len = Array.getLength(array);
         return expand(array, len > 0 ? len << 1 : 1);

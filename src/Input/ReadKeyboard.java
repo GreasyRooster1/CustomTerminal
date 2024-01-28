@@ -7,6 +7,8 @@ import lc.kra.system.keyboard.event.GlobalKeyEvent;
 
 import java.util.Map;
 
+import static Util.Util.removeLastChar;
+
 public class ReadKeyboard {
     static boolean run = true;
     public static String textBuffer = "";
@@ -30,6 +32,10 @@ public class ReadKeyboard {
                 if (event.getVirtualKeyCode() == GlobalKeyEvent.VK_RETURN) {
                     Console.run(textBuffer);
                     textBuffer = "";
+                    return;
+                }
+                if (event.getVirtualKeyCode() == GlobalKeyEvent.VK_BACK||event.getVirtualKeyCode() == GlobalKeyEvent.VK_DELETE) {
+                    textBuffer = removeLastChar(textBuffer);
                     return;
                 }
                 textBuffer+=event.getKeyChar();
