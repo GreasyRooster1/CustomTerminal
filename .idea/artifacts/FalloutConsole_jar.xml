@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="FalloutConsole:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FalloutConsole_jar</output-path>
+    <root id="root">
+      <element id="archive" name="FalloutConsole.jar">
+        <element id="module-output" name="FalloutConsole" />
+      </element>
+      <element id="library" level="project" name="github.dyorgio.runtime.jinputhook" />
+      <element id="library" level="project" name="lc.kra.system.hook" />
+    </root>
+  </artifact>
+</component>

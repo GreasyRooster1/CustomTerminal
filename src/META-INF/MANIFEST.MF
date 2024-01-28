@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: jinputhook-1.0.2.jar jinput-2.0.9.jar jinput-platform-2.0.7-
+ natives-osx.jar jinput-platform-2.0.7-natives-linux.jar jinput-platform
+ -2.0.7-natives-windows.jar system-hook-3.8.jar
+
