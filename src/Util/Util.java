@@ -3,6 +3,17 @@ package Util;
 import java.lang.reflect.Array;
 
 public class Util {
+    public static String[] reverse(String a[])
+    {
+        int n = a.length;
+        String[] b = new String[n];
+        int j = n;
+        for (String s : a) {
+            b[j - 1] = s;
+            j = j - 1;
+        }
+        return b;
+    }
     public static Object expand(Object array) {
         int len = Array.getLength(array);
         return expand(array, len > 0 ? len << 1 : 1);

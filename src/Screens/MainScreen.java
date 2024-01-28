@@ -21,15 +21,16 @@ public class MainScreen extends Screen{
     }
 
     void renderCommandHistory(){
+        String[] reversed = Util.reverse(commandHistory);
         for (int i = 0; i < commandHistory.length; i++) {
-            Console.text(commandHistory[i],0,Console.heightChars-1-i);
+            Console.text(reversed[i],0,Console.heightChars-2-i);
         }
     }
 
     @Override
     public void onCommand(String cmd){
-        commandHistory = (String[]) Util.append(commandHistory, CommandRegister.executeCommand(cmd));
         commandHistory = (String[]) Util.append(commandHistory,Console.user+"> "+cmd);
+        commandHistory = (String[]) Util.append(commandHistory, CommandRegister.executeCommand(cmd));
         commandHistory = (String[]) Util.append(commandHistory,"");                               //just a newline
     }
 }
