@@ -13,6 +13,7 @@ public class Console {
     public static double widthScreen,heightScreen;
     public static int heightChars, widthChars;
     public static char[][] display = {};
+    public static String user = "ADMIN";
     public static void startup(){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         widthScreen = screenSize.getWidth();

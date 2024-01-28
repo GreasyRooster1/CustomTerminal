@@ -1,3 +1,5 @@
+package Input;
+
 import Console.Console;
 import lc.kra.system.keyboard.GlobalKeyboardHook;
 import lc.kra.system.keyboard.event.GlobalKeyAdapter;
@@ -7,7 +9,7 @@ import java.util.Map;
 
 public class ReadKeyboard {
     static boolean run = true;
-    static String textBuffer = "";
+    public static String textBuffer = "";
     public static void setup(){
         GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook(true); // Use false here to switch to hook instead of raw input
 
